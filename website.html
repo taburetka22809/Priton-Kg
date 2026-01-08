@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Priton Kg</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        :root {
+            --genshin-blue: #3b4255;
+            --genshin-gold: #ece5d8;
+            --genshin-accent: #f3ad18;
+            --primogem: #69cbff;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Arial", sans-serif;
+            background-color: #2e3445;
+            background-image: url('https://w.wallhaven.cc/full/85/wallhaven-85m88y.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            color: var(--genshin-blue);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            border-bottom: 3px solid var(--genshin-accent);
+            position: fixed;
+            width: 100%;
+            height: 5%;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--genshin-blue);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--genshin-accent);
+            color: white;
+            border-radius: 20px;
+        }
+
+        section {
+            padding: 50px 10%;
+            background: rgba(236, 229, 216, 0.92);
+            margin: 30px auto;
+            max-width: 1100px;
+            border-radius: 8px;
+            border: 2px solid #d3bc8e;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4a5265;
+            border-bottom: 2px solid #d3bc8e;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 10px 10px 50px 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+            border-bottom: 5px solid var(--genshin-accent);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(243, 173, 24, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #e9e5dc;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .char-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .char-table th {
+            background: #4a5265;
+            color: white;
+            padding: 15px;
+        }
+
+        .char-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        #slider {
+            width: 100%;
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        #slider img {
+            width: 100%; height: 100%; object-fit: cover; display: none;
+        }
+        button, .link-button {
+            background: var(--genshin-blue);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover {
+            background: var(--genshin-accent);
+            transform: scale(1.05);
+        }
+
+        .hero-banner {
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images8.alphacoders.com/110/1107563.jpg');
+            background-size: cover;
+            border-radius: 15px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <canvas id="logo" width="200" height="60"></canvas>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#crew">Персонажи</a></li>
+                <li><a href="#regions">Регионы</a></li>
+                <li><a href="#gallery">Пейзажи</a></li>
+                <li><a href="#music">      .....</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a name="home"></a>
+    <section style="background:none; border:none; box-shadow:none;">
+        <div class="hero-banner">
+            <h1 style="font-size: 42px; margin-bottom: 10px;">Путешествие только начинается</h1>
+            <p id="introText" style="font-size: 18px; margin-bottom: 25px;">Добро пожаловать в Priton kg выбери путану и найди свою судьбу.</p>
+            <button onclick="changeText()">Выбрал путану</button>
+        </div>
+    </section>
+
+    <a name="crew"></a>
+    <section>
+        <h2>Анальные геи</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px">
+            <div class="card"><img src="../фотоархив/боп.jpg"><h3>Бопоня</h3><p>Минет без резинки</p></div>
+            <div class="card"><img src="../фотоархив/алашг.jpg"><h3>Алагбик</h3><p>Анал</p></div>
+            <div class="card"><img src="../фотоархив/маратик.jpg"><h3>Маратик</h3><p>Традиционный секс</p></div>
+            <div class="card"><img src="../фотоархив/ром.jpg"><h3>Ромпомпом</h3><p>Универсал</p></div>
+            <div class="card"><img src="../фотоархив/photo_2026-01-08_19-48-18.jpg"><h3>Абубакр</h3><p>Трансгендер</p></div>
+            <div class="card"><img src="../фотоархив/мигрант оо.jpg"><h3>Мигрант</h3><p>Гей выезд</p></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Архив характеристик</h2>
+        <table class="char-table" id="charTable">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Регион</th>
+                    <th>Пробег</th>
+                    <th>Опыт работы</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Бопоня</td><td>Москва</td><td>Бойдок</td><td>3 года</td></tr>
+                <tr><td>Алагбик</td><td>Сокулук</td><td>Бойдок</td><td>Новый</td></tr>
+                <tr><td>Маратик</td><td>Политех</td><td>Пробитый</td><td>10 лет</td></tr>
+                <tr><td>Ромпомпом</td><td>Аквадом</td><td>Бойдок эмес</td><td>500+</td></tr>
+                <tr><td>Абубакр</td><td>Сары-Озон</td><td>Девственник</td><td>Запечатанный</td></tr>
+                <tr><td>Мигрант</td><td>Уфа</td><td>Вместо * О</td><td>1 год</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <a name="regions"></a>
+    <section>
+        <h2>Описание</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <p><strong> Бопоня:</strong>Куплю пива возьму в рот.</p>
+            <p><strong> Алагбик:</strong> Люблю движ в жопе.</p>
+            <p><strong> Маратик:</strong> Предпочитаю быть снизу.</p>
+            <p><strong> Ромпомпом:</strong> Готов к экспериментам.</p>
+            <p><strong> Абубакр:</strong> Могу вставить и принять.</p>
+            <p><strong> Мигрант:</strong> Я люблю когда волосатые мужики обмазываются маслом.</p>
+        </div>
+    </section>
+
+    <a name="gallery"></a>
+    <section>
+        <h2 style="display:block; text-align:center">Фотоархив геев</h2>
+        <div id="slider">
+            <img src="../фотоархив/photo_2026-01-08_19-48-18.jpg">
+            <img src="../фотоархив/алашг.jpg">
+            <img src="../фотоархив/боп.jpg">
+            <img src="../фотоархив/мигрант оо.jpg">
+            <img src="../фотоархив/ром.jpg">
+            <img src="../фотоархив/маратик.jpg">
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+            <a href="#" class="link-button">Вызвать путану</a>
+        </div>
+    </section>
+
+    <script>
+        /* ===== Логотип: Звезда Примогем ===== */
+        const c = document.getElementById("logo");
+        const ctx = c.getContext("2d");
+        
+        function drawPrimogem() {
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0,0,200,60);
+            
+            // Рисуем звезду
+            ctx.beginPath();
+            ctx.moveTo(30, 10);
+            ctx.quadraticCurveTo(30, 30, 50, 30);
+            ctx.quadraticCurveTo(30, 30, 30, 50);
+            ctx.quadraticCurveTo(30, 30, 10, 30);
+            ctx.quadraticCurveTo(30, 30, 30, 10);
+            ctx.fillStyle = "#69cbff";
+            ctx.fill();
+            
+            // Текст
+            ctx.fillStyle = "#3b4255";
+            ctx.font = "bold 18px Arial";
+            ctx.fillText("TEYVAT GUILD", 65, 38);
+        }
+        drawPrimogem();
+
+        /* ===== Функционал ===== */
+        function changeText() {
+            const t = document.getElementById("introText");
+            t.innerHTML = "Звезды и бездна ждут тебя!";
+            t.style.color = "#f3ad18";
+            t.style.fontWeight = "bold";
+        }
+
+        // Зебра для таблицы (стиль Genshin)
+        $("#charTable tbody tr:even").css("background", "#f9f6f1");
+
+        // Слайдер
+        let index = 0;
+        const slides = $("#slider img");
+        slides.eq(0).show();
+        setInterval(() => {
+            slides.eq(index).fadeOut(1000);
+            index = (index + 1) % slides.length;
+            slides.eq(index).fadeIn(1000);
+        }, 1000);
+    </script>
+
+</body>
+</html>
